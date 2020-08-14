@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+
+import pyautogui
+import os
+import time
+
+
+def open():
+    os.system("open -a Chromium")
+
+
+def close():
+    os.system("pkill Chromium")
+
+
+def main():
+    print("Closing Chromium")
+    close()
+    time.sleep(2)
+    print("Reopening Chromium")
+    open()
+    time.sleep(4)
+    print("Clearing...")
+    pyautogui.write("chrome://settings/clearBrowserData")
+    pyautogui.press("enter")
+    time.sleep(2)
+    pyautogui.press("tab", presses=3)
+    for _ in range(1, 9):
+        time.sleep(0.3)
+        pyautogui.press(["tab"], presses=1)
+    pyautogui.press("tab")
+    pyautogui.press("enter")
+    time.sleep(2)
+    print("Done! Now reopening")
+    close()
+
+
+main()
+time.sleep(2)
+open()

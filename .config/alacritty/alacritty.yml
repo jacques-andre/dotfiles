@@ -1,0 +1,84 @@
+# Window Customization
+window:
+  dimensions:
+    columns: 140
+    lines: 38
+  padding:
+    x: 15
+    y: 15
+  decorations: buttonless
+scrolling:
+  history: 10000
+  multiplier: 3
+background_opacity: .98
+
+font:
+  # The normal (roman) font face to use.
+  # Style can be specified to pick a specific face.
+  normal:
+     family: "IBM Plex Mono"
+     style: "Medium"
+    # family: "Fira Code"
+    # family: "Source Code Pro"
+    # style: Retina
+
+  # The bold font face
+  bold:
+    family: "IBM Plex Mono"
+    style: "Medium"
+
+  # The italic font face
+  italic:
+    family: "IBM Plex Mono"
+    # family: "Fira Code"
+    # family: "Source Code Pro"
+    # style: "Medium Italic"
+
+  # Point size of the font
+  size: 14.0
+
+# Colors (Base16 Default Dark)
+colors:
+  # Default colors
+  primary:
+    background: '0x181818'
+    foreground: '0xd8d8d8'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xd8d8d8'
+    cursor: '0xd8d8d8'
+
+  # Normal colors
+  normal:
+    black:   '0x181818'
+    red:     '0xab4642'
+    green:   '0xa1b56c'
+    yellow:  '0xf7ca88'
+    blue:    '0x7cafc2'
+    magenta: '0xba8baf'
+    cyan:    '0x86c1b9'
+    white:   '0xd8d8d8'
+
+  # Bright colors
+  bright:
+    black:   '0x585858'
+    red:     '0xab4642'
+    green:   '0xa1b56c'
+    yellow:  '0xf7ca88'
+    blue:    '0x7cafc2'
+    magenta: '0xba8baf'
+    cyan:    '0x86c1b9'
+    white:   '0xf8f8f8'
+
+
+key_bindings:
+  - { key: PageUp,   mods: Shift, action: ScrollPageUp,   mode: ~Alt       }
+  - { key: T, mods: Command, action: SpawnNewInstance }
+  - { key: Add, mods: Command, action: IncreaseFontSize }
+  - { key: Subtract, mods: Command, action: DecreaseFontSize }
+  - { key: K,        mods: Command, command: { program: "/usr/bin/clear" } }
+  - { key: R, mods: Command, action: ResetFontSize }
+  - { key: W, mods: Command, action: None }
+
+

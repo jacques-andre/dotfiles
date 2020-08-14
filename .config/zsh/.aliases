@@ -1,0 +1,57 @@
+# Allow Sudo With Aliases
+alias sudo="sudo "
+
+# Shortcuts
+alias vi="nvim"
+alias vim="nvim"
+alias v="nvim"
+
+alias py3="python3"
+alias py2="python"
+alias python="python3"
+
+alias g="git"
+
+alias news="newsboat"
+
+# Folders/files
+alias d="cd ~/Dropbox"
+alias dt="cd ~/Desktop"
+alias p="cd ~/projects"
+alias play="cd ~/playground"
+alias urls="v ~/.newsboat/urls"
+
+# I'm Lazy
+alias rr="rm -rf"
+alias reload="source ~/.zshrc"
+alias quit="exit"
+alias o="open "
+alias vrc="v ~/.config/nvim/init.vim"
+alias claer="clear"
+mpush(){
+    git add . && git commit -a && git push -u origin master
+}
+
+# Mac Specific
+alias afk="open -a ScreenSaverEngine"
+alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
+alias crypto="python3 ~/playground/crypto-tracker/main.py"
+alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias sleep="sudo shutdown -s now"
+
+# MISC
+alias ls="ls -G" # better colors
+alias imgur="imgur-upload"
+alias ptest="ping 8.8.8.8"
+alias geoip="curl ipinfo.io"
+alias cal="cal -A 8"
+
+# Apps
+alias tsm='transmission-remote'
+alias torrents="watch -n 120 transmission-remote -l"
+alias runtime="gnomon"
+
+# Tmux
+alias tmk="tmux kill-session -t"
+alias tma="tmux attach-session -t"
+alias tml="tmux ls"
