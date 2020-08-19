@@ -37,7 +37,6 @@ alias afk="open -a ScreenSaverEngine"
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 alias crypto="python3 ~/playground/crypto-tracker/main.py"
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-alias sleep="sudo shutdown -s now"
 
 # MISC
 alias ls="ls -G" # better colors
@@ -45,6 +44,7 @@ alias imgur="imgur-upload"
 alias ptest="ping 8.8.8.8"
 alias geoip="curl ipinfo.io"
 alias cal="cal -A 8"
+alias localdevices='sudo arp-scan --interface=en0 --localnet'
 
 # Apps
 alias tsm='transmission-remote'

@@ -15,7 +15,6 @@ call plug#end()
 
 " Tab settings set ruler
 set number
-set cursorline
 set smartindent
 set noswapfile
 set expandtab
@@ -55,3 +54,10 @@ map <C-n> :NERDTreeToggle<CR>
 
 " COC
 source ~/.config/nvim/coc.vim
+
+" Cursor
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+" autocmd VimLeave * call system('printf "\e[5 q" > $TTY')
+" au VimLeave * call nvim_cursor_set_shape("vertical-bar")
+

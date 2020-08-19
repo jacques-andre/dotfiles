@@ -3,6 +3,7 @@
 import pyautogui
 import os
 import time
+import sys
 
 
 def open():
@@ -35,6 +36,17 @@ def main():
     close()
 
 
-main()
+arg = 0
+
+try:
+    arg = int(sys.argv[1])
+except Exception:
+    arg = 1
+
+
+for i in range(0, arg):
+    main()
+    print(f"{i+1}/{arg}")
+
 time.sleep(2)
 open()

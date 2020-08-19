@@ -10,7 +10,7 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Fast Repeat 
 defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
 # Unhide the ~/Library folder
 chflags nohidden ~/Library
 # Turn on app auto-update

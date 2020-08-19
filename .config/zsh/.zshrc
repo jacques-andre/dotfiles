@@ -105,3 +105,16 @@ export PATH=$HOME/scripts:$PATH
 export LSCOLORS="dxfxcxdxbxegedabagacad" 
 export EDITOR=/usr/local/bin/nvim
 ZSH_DISABLE_COMPFIX=true
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ $KEYMAP == vicmd ]] || [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ $KEYMAP == main ]] || [[ $KEYMAP == viins ]] || [[ $KEYMAP = '' ]] || [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+
+# Start with beam shape cursor on zsh startup and after every command.
+zle-line-init() { zle-keymap-select 'beam'}
