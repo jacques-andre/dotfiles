@@ -1,15 +1,16 @@
 syntax on
 
+" execute "set t_8f=\e[38;2;%lu;%lu;%lum"
+" execute "set t_8b=\e[48;2;%lu;%lu;%lum"
+
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'chriskempson/base16-vim'
+Plug 'rakr/vim-one'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
 call plug#end()
 
@@ -40,20 +41,13 @@ map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
 
-let base16colorspace=256  " Access colors present in 256 colorspace
 set termguicolors
-colorscheme base16-classic-dark
-" colorscheme base16-black-metal-immortal
+colorscheme one
+set background=dark
 
 " User Commands
 command Py execute "!python3 %" 
 nnoremap S :%s//g<Left><Left>
-
-" Nerd Tree
-map <C-n> :NERDTreeToggle<CR>
-
-" COC
-source ~/.config/nvim/coc.vim
 
 " Cursor
 autocmd InsertEnter * set cul
@@ -61,3 +55,8 @@ autocmd InsertLeave * set nocul
 " autocmd VimLeave * call system('printf "\e[5 q" > $TTY')
 " au VimLeave * call nvim_cursor_set_shape("vertical-bar")
 
+if exists('+termguicolors')
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
