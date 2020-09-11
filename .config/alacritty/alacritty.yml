@@ -9,64 +9,64 @@ window:
   decorations: buttonless
 scrolling:
   history: 10000
-  multiplier: 3
+  multiplier: 2
 background_opacity: 1
 
 font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
   normal:
-     family: "IBM Plex Mono"
-     style: "Medium"
+     family: "SF Mono"
+     style: "Regular"
     # family: "Fira Code"
     # family: "Source Code Pro"
     # style: Retina
 
   # The bold font face
   bold:
-    family: "IBM Plex Mono"
+    family: "SF Mono"
     style: "Medium"
 
   # The italic font face
   italic:
-    family: "IBM Plex Mono"
+    family: "SF Mono"
     # family: "Fira Code"
     # family: "Source Code Pro"
     # style: "Medium Italic"
 
   # Point size of the font
-  size: 16.0
+  size: 14.0
 
-# Colors (One Dark)
+  # Colors (Ayu Dark)
 colors:
   # Default colors
   primary:
-    background: '#282c34'
-    foreground: '#abb2bf'
+    background: '0x0F1419'
+    foreground: '0xB3B1AD'
 
   # Normal colors
   normal:
-    # NOTE: Use '#131613' for the `black` color if you'd like to see
-    # black text on the background.
-    black:   '#282c34'
-    red:     '#e06c75'
-    green:   '#98c379'
-    yellow:  '#d19a66'
-    blue:    '#61afef'
-    magenta: '#c678dd'
-    cyan:    '#56b6c2'
-    white:   '#abb2bf'
+    black: '0x01060E'
+    red: '0xEA6C73'
+    green: '0x91B362'
+    yellow: '0xF9AF4F'
+    blue: '0x53BDFA'
+    magenta: '0xFAE994'
+    cyan: '0x90E1C6'
+    white: '0xC7C7C7'
 
   # Bright colors
   bright:
-    black:   '#5c6370'
-    red:     '#e06c75'
-    green:   '#98c379'
-    yellow:  '#d19a66'
-    blue:    '#61afef'
-    magenta: '#c678dd'
-    cyan:    '#56b6c2'
-    white:   '#ffffff'
+    black: '0x686868'
+    red: '0xF07178'
+    green: '0xC2D94C'
+    yellow: '0xFFB454'
+    blue: '0x59C2FF'
+    magenta: '0xFFEE99'
+    cyan: '0x95E6CB'
+    white: '0xFFFFFF'
+
+
 key_bindings:
   - { key: PageUp,   mods: Shift, action: ScrollPageUp,   mode: ~Alt       }
   - { key: T, mods: Command, action: SpawnNewInstance }
@@ -76,5 +76,5 @@ key_bindings:
   - { key: R, mods: Command, action: ResetFontSize }
   - { key: W, mods: Command, action: None }
 
-cursor: 
+cursor:
     style: Beam

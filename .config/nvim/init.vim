@@ -1,12 +1,14 @@
 syntax on
 
+" Tmux color issue fix (?)
 " execute "set t_8f=\e[38;2;%lu;%lu;%lum"
 " execute "set t_8b=\e[48;2;%lu;%lu;%lum"
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'rakr/vim-one'
+" Plug 'rakr/vim-one'
+Plug 'ayu-theme/ayu-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -14,7 +16,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
 call plug#end()
 
-" Tab settings set ruler
+set ruler
 set number
 set smartindent
 set noswapfile
@@ -42,11 +44,11 @@ map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
 
 set termguicolors
-colorscheme one
-set background=dark
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 
 " User Commands
-command Py execute "!python3 %" 
+command Py execute "!python3 %"
 nnoremap S :%s//g<Left><Left>
 
 " Cursor
@@ -55,6 +57,7 @@ autocmd InsertLeave * set nocul
 " autocmd VimLeave * call system('printf "\e[5 q" > $TTY')
 " au VimLeave * call nvim_cursor_set_shape("vertical-bar")
 
+" Stops tmux color issues
 if exists('+termguicolors')
   let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
