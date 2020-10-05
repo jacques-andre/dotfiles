@@ -7,8 +7,7 @@ syntax on
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-" Plug 'rakr/vim-one'
-Plug 'ayu-theme/ayu-vim'
+Plug 'rakr/vim-one'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -44,11 +43,12 @@ map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
 
 set termguicolors
-let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+colorscheme one
+set background=dark
 
 " User Commands
 command Py execute "!python3 %"
+command Go execute "!gofmt -w % && go run %"
 nnoremap S :%s//g<Left><Left>
 
 " Cursor

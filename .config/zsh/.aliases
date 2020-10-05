@@ -20,6 +20,7 @@ alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias play="cd ~/playground"
 alias urls="v ~/.newsboat/urls"
+alias ls="ls -G"
 
 # I'm Lazy
 alias rr="rm -rf"
@@ -39,7 +40,6 @@ alias crypto="python3 ~/playground/crypto-tracker/main.py"
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # MISC
-alias ls="ls -G" # better colors
 alias imgur="imgur-upload"
 alias ptest="ping 8.8.8.8"
 alias geoip="curl ipinfo.io"
