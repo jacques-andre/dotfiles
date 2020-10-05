@@ -49,6 +49,7 @@ set background=dark
 " User Commands
 command Py execute "!python3 %"
 command Go execute "!gofmt -w % && go run %"
+command Java execute "!javac % && java %"
 nnoremap S :%s//g<Left><Left>
 
 " Cursor
