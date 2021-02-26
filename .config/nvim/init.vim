@@ -11,8 +11,11 @@ Plug 'rakr/vim-one'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'sheerun/vim-polyglot'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'chriskempson/base16-vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
+Plug 'shime/vim-livedown'
 call plug#end()
 
 set ruler
@@ -42,9 +45,7 @@ map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
 
-set termguicolors
-colorscheme one
-set background=dark
+colorscheme base16-default-dark
 
 " User Commands
 command Py execute "!python3 %"
@@ -52,15 +53,13 @@ command Go execute "!gofmt -w % && go run %"
 command Java execute "!javac % && java %"
 nnoremap S :%s//g<Left><Left>
 
-" Cursor
-autocmd InsertEnter * set cul
-autocmd InsertLeave * set nocul
-" autocmd VimLeave * call system('printf "\e[5 q" > $TTY')
-" au VimLeave * call nvim_cursor_set_shape("vertical-bar")
-
 " Stops tmux color issues
 if exists('+termguicolors')
   let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+let g:livedown_autorun = 1 "Run markdown preview on buffer.
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+

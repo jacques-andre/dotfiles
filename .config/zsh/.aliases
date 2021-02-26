@@ -50,8 +50,10 @@ alias localdevices='sudo arp-scan --interface=en0 --localnet'
 alias tsm='transmission-remote'
 alias torrents="watch -n 120 transmission-remote -l"
 alias runtime="gnomon"
+alias veracrypt="/Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt"
 
 # Tmux
 alias tmk="tmux kill-session -t"
 alias tma="tmux attach-session -t"
 alias tml="tmux ls"
+

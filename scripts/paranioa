@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+
+import os
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--extra', action='store_true',
+                    help='Extra safe')
+args = parser.parse_args()
+
+if args.extra:
+    print("extra mode is running")
+
+
+print("Removing .zsh_history")
+os.system("rm -f -v /Users/jacques/.zsh_history")
+print("Done")
+
+print("Removing Vim History:")
+os.system("rm -rf -v /Users/jacques/.vim/undo/*")
+print("Done")
+
+
+print()
+print("rest assured")
+
+if args.extra:
+    print("shutting down now...")
+    os.system("sudo shutdown -h now")

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+echo ' ' 
+echo 'Updating Applications...'
+    brew upgrade         
+    brew update #Updating home-brew apps & formulas
+    brew upgrade --cask
+    mas upgrade #Updating Mac App Store Apps
+    npm update
+
+echo ' ' 
+echo 'Cleaning caches & directories...'
+    brew cleanup -s #Clearing home-brew cache
+     rm -rf /private/var/folders/17/0n1s76yx0m93869jhvbc_5hh0000gn/C/com.apple.appstoreagent
+
+echo ' ' 
+echo 'Updating Complete!'
+source ~/.zshrc
+rm '/Users/jacques/.zsh_history'

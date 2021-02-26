@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+import datetime, pytz
+
+nyc_datetime = datetime.datetime.now(pytz.timezone("US/Eastern"))
+nyc_datetime = nyc_datetime.strftime("%H:%M")
+
+paris_datetime = datetime.datetime.now(pytz.timezone("Europe/Paris"))
+paris_datetime = paris_datetime.strftime("%H:%M")
+
+scotland_datetime = datetime.datetime.now(pytz.timezone("Europe/London"))
+scotland_datetime = scotland_datetime.strftime("%H:%M")
+
+aus_datetime = datetime.datetime.now(pytz.timezone("Australia/Sydney"))
+aus_datetime = aus_datetime.strftime("%H:%M")
+
+print("\n")
+print(f"New York: {nyc_datetime}")
+print("-------")
+print(f"Paris: {paris_datetime}")
+print("-------")
+print(f"Sydney: {aus_datetime}")
+print("-------")
+print(f"Scotland: {scotland_datetime}")
+print("\n")

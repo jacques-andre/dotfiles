@@ -22,7 +22,7 @@ text-width 80
 # -- navigation ----------------------------------------------------------------
 
 goto-next-feed no
-browser "open -g -a 'Firefox' %u"
+browser "open -g -a 'Brave\ Browser' %u"
 
 
 bind-key j down feedlist
