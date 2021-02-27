@@ -17,6 +17,8 @@ brew install 'watch'
 brew install 'gotop'
 brew install 'htop'
 brew install 'neovim'
+brew install 'ghc' 
+brew install 'cabal-install'
 
 brew install --cask 'discord'
 brew install --cask 'java'
