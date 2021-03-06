@@ -53,5 +53,6 @@ brew install --cask 'anki'
 brew install --cask 'ledger-live'
 brew install --cask 'monero-wallet'
 brew install --cask 'monitorcontrol'
+brew install --cask 'flux'
 
 mas install '585829637'
