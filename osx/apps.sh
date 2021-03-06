@@ -51,5 +51,7 @@ brew install --cask 'selfcontrol'
 brew install --cask 'veracrypt'
 brew install --cask 'anki'
 brew install --cask 'ledger-live'
+brew install --cask 'monero-wallet'
+brew install --cask 'monitorcontrol'
 
 mas install '585829637'
