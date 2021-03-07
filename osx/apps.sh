@@ -20,6 +20,7 @@ brew install 'neovim'
 brew install 'ghc' 
 brew install 'cabal-install'
 brew install 'hugo'
+brew install 'mpv'
 
 brew install --cask 'discord'
 brew install --cask 'java'
