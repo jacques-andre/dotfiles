@@ -1,0 +1,43 @@
+# .aliases: make calling commands/scripts easier
+
+# vim
+alias vi="nvim"
+alias vim="nvim"
+alias v="nvim"
+
+# python
+alias py3="python3"
+alias py2="python"
+alias python="python3"
+
+alias g="git"
+
+alias news="newsboat"
+alias ls="ls -lG --color"
+
+# Folders/files
+alias dt="cd ~/Desktop"
+
+# lazy
+alias reload="source ~/.zshrc"
+
+# misspell
+alias claer="clear"
+alias mkidr="mkdir"
+
+# commands
+alias ptest="ping -v 8.8.8.8"
+alias geoip="curl ipinfo.io | jq"
+
+# apps
+alias lock="xflock4"
+alias watch="watch -c"
+alias ncdu="ncdu --color off"
+
+# tmux
+alias tmk="tmux kill-session -t"
+alias tma="tmux attach-session -t"
+alias tml="tmux ls"
+
+alias yt-dlp="yt-dlp -S res,ext:mp4:m4a --recode mp4"
+alias better_find="find . -print | grep -i $1"
