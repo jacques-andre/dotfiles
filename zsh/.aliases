@@ -1,3 +1,4 @@
+#!/bin/bash
 # .aliases: make calling commands/scripts easier
 
 # vim
@@ -41,3 +42,13 @@ alias tml="tmux ls"
 
 alias yt-dlp="yt-dlp -S res,ext:mp4:m4a --recode mp4"
 alias better_find="find . -print | grep -i $1"
+
+# docker
+clean_docker(){
+  docker rm -vf $(docker ps -aq) # delete all containers
+  docker rmi -f $(docker images -aq) # delete all images
+  docker system prune --volumes --all -f 
+}
+power_docker(){
+  clean_docker; docker-compose up -d;
+}
