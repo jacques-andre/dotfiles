@@ -11,15 +11,13 @@ alias py3="python3"
 alias py2="python"
 alias python="python3"
 
+# git
 alias g="git"
-
-alias news="newsboat"
-alias ls="ls -lG --color"
 
 # Folders/files
 alias dt="cd ~/Desktop"
 
-# lazy
+# resource zshrc
 alias reload="source ~/.zshrc"
 
 # misspell
@@ -29,6 +27,8 @@ alias mkidr="mkdir"
 # commands
 alias ptest="ping -v 8.8.8.8"
 alias geoip="curl ipinfo.io | jq"
+alias yt-dlp="yt-dlp -S res,ext:mp4:m4a --recode mp4"
+alias better_find="find . -print | grep -i $1"
 
 # apps
 alias lock="xflock4"
@@ -40,14 +40,11 @@ alias tmk="tmux kill-session -t"
 alias tma="tmux attach-session -t"
 alias tml="tmux ls"
 
-alias yt-dlp="yt-dlp -S res,ext:mp4:m4a --recode mp4"
-alias better_find="find . -print | grep -i $1"
-
 # docker
 clean_docker(){
   docker rm -vf $(docker ps -aq) # delete all containers
   docker rmi -f $(docker images -aq) # delete all images
-  docker system prune --volumes --all -f 
+  docker system prune --volumes --all -f # delete all volumes
 }
 power_docker(){
   clean_docker; docker-compose up -d;
