@@ -13,6 +13,7 @@ alias python="python3"
 
 # git
 alias g="git"
+alias glog="git log --graph --pretty=format:"%h%x09%an%x09%ad%x09%s""
 
 # Folders/files
 alias dt="cd ~/Desktop"
@@ -34,11 +35,14 @@ alias better_find="find . -print | grep -i $1"
 alias lock="xflock4"
 alias watch="watch -c"
 alias ncdu="ncdu --color off"
+alias mpv_small="mpv --geometry=1400x720+1200-1200 --ontop --volume=10 $1"
 
 # tmux
 alias tmk="tmux kill-session -t"
 alias tma="tmux attach-session -t"
 alias tml="tmux ls"
+
+alias ls="ls -l --color"
 
 # docker
 clean_docker(){
@@ -48,4 +52,11 @@ clean_docker(){
 }
 power_docker(){
   clean_docker; docker-compose up -d;
+}
+
+#find
+find_newest_files(){
+  # $1 directory
+  # $2 number of files to find
+  find $1 -type f -printf "%T@ %p\n" | sort -n | cut -d' ' -f 2- | tail -n $2 | tac
 }
