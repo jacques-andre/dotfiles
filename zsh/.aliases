@@ -13,7 +13,8 @@ alias python="python3"
 
 # git
 alias g="git"
-alias glog="git log --graph --pretty=format:"%h%x09%an%x09%ad%x09%s""
+alias gitlog="git log --graph --decorate --pretty=format:"%h%x09%an%x09%ad%x09%s""
+alias gitlogline="git log --pretty=oneline" # log commits one line each
 
 # Folders/files
 alias dt="cd ~/Desktop"
@@ -52,6 +53,9 @@ clean_docker(){
 }
 power_docker(){
   clean_docker; docker-compose up -d;
+}
+power_lazy_docker(){
+  clean_docker; docker-compose up -d; lazydocker;
 }
 
 #find
