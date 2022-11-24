@@ -13,7 +13,6 @@ alias python="python3"
 
 # git
 alias g="git"
-alias gitlog="git log --graph --decorate --pretty=format:"%h%x09%an%x09%ad%x09%s""
 # alias gitlogline="git log --pretty=oneline" # log commits one line each
 # alias gitlogline="git log --pretty=format:"%h%x09%an%x09%ad%x09%s"" # log commits one line each
 alias gitlogline="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
@@ -30,7 +29,7 @@ alias mkidr="mkdir"
 
 # commands
 alias ptest="ping -v 8.8.8.8"
-alias geoip="curl ipinfo.io | jq"
+alias geoip="curl --silent ipinfo.io | jq"
 alias yt-dlp="yt-dlp -S res,ext:mp4:m4a --recode mp4"
 alias better_find="find . -print | grep -i $1"
 
