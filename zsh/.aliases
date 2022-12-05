@@ -37,8 +37,8 @@ alias better_find="find . -print | grep -i $1"
 alias lock="xflock4"
 alias watch="watch -c"
 alias ncdu="ncdu --color off"
-alias mpv_small="mpv --geometry=1400x720+1200-1200 --ontop --volume=10 $1"
-alias mpv_tiny="mpv --geometry=300x200+1200-1200 --ontop --volume=10 $1"
+alias mpv_small="mpv --geometry=1400x720+1200-1200 --volume=10 $1"
+alias mpv_tiny="mpv --geometry=300x200+1200-1200 --volume=10 $1"
 
 # tmux
 alias tmk="tmux kill-session -t"

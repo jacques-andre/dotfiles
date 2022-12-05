@@ -7,17 +7,11 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'shime/vim-livedown'
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
-Plug 'jiangmiao/auto-pairs'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'junegunn/fzf'
+Plug 'shime/vim-livedown'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'chrisbra/csv.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'sjl/badwolf'
-Plug 'fatih/vim-go'
-Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " defaults
@@ -28,7 +22,6 @@ set softtabstop=2
 set tabstop=2
 set shiftwidth=2
 set autoindent
-set expandtab
 
 set nohlsearch
 set ignorecase
@@ -37,10 +30,22 @@ set scrolloff=8
 set signcolumn=yes
 set conceallevel=0
 set clipboard+=unnamedplus
+set cursorline
+set mouse=n
+
+set listchars=tab:\|\ 
+set list
+
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
+
 
 let mapleader=' '
 
-colorscheme badwolf
+" set spell on specific files
+autocmd FileType latex,tex,md,markdown,text,gitcommit setlocal spell
+
+colorscheme gruvbox
 
 " Move around splits with space hjkl
 map <leader>h :wincmd h<CR>
@@ -51,18 +56,20 @@ map <leader>l :wincmd l<CR>
 " system clipboard map
 vmap xyy "+y
 
+" fzf
+nnoremap <silent> <C-p> :FZF<CR>
+
 
 " plugins
 " Nerdtree
 nnoremap <leader>N :NERDTreeToggle<CR>
 
+
 "COC
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" https://superuser.com/questions/1734914/neovim-coc-nvim-enter-key-doesnt-work-to-autocomplete
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
-" set spell on specific files
-autocmd FileType latex,tex,md,markdown,text,gitcommit setlocal spell
-
-set mouse=n
 
 " golang
 let g:go_highlight_functions = 1
