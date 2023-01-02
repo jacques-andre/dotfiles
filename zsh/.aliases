@@ -1,5 +1,6 @@
 #!/bin/bash
 # .aliases: make calling commands/scripts easier
+alias sudo='sudo '
 
 # vim
 alias vi="nvim"
