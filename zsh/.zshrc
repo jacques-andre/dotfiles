@@ -27,3 +27,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # https://stackoverflow.com/questions/20628918/cannot-download-gopath-not-set
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
+
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
+export PATH=$JAVA_HOME/bin:$PATH

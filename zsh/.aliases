@@ -55,6 +55,9 @@ clean_docker(){
   docker rmi -f $(docker images -aq) # delete all images
   docker system prune --volumes --all -f # delete all volumes
 }
+power_docker_image(){
+	clean_docker; docker build -t $1 .; docker run -d --name $1 $1; 
+}
 power_docker(){
   clean_docker; docker-compose up -d;
 }
