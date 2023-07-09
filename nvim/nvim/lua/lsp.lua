@@ -9,7 +9,8 @@ lsp.ensure_installed({
   'lua_ls',
   'jedi_language_server',
   'gopls',
-  'jsonls'
+  'jsonls',
+  'tailwindcss'
 })
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
