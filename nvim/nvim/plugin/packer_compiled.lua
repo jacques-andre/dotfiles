@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/jacques/.local/share/nvim/site/pack/packer/start/moonfly",
     url = "https://github.com/bluz71/vim-moonfly-colors"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/jacques/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/jacques/.local/share/nvim/site/pack/packer/start/packer.nvim",
