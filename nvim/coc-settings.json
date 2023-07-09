@@ -1,8 +1,0 @@
-{
-  "python.linting.flake8Enabled": true,
-  "python.formatting.provider": "black",
-  "diagnostic.checkCurrentLine": true,
-  "diagnostic.messageTarget": "echo",
-  "coc.preferences.formatOnType": true,
-  "coc.preferences.formatOnSaveFiletypes": ["python", "go", "java", "html"]
-}
