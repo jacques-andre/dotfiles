@@ -13,8 +13,8 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 
 # include aliases
-source $HOME/.aliases
 export PATH=$HOME/scripts:$PATH
+source $HOME/.aliases
 
 # vim editor
 export VISUAL=nvim;
@@ -28,5 +28,6 @@ export PATH="$HOME/.local/bin:$PATH"
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
-export PATH=$JAVA_HOME/bin:$PATH
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
