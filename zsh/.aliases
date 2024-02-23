@@ -1,6 +1,8 @@
 #!/bin/bash
 # .aliases: make calling commands/scripts easier
 alias sudo='sudo '
+alias ssh='ssh'
+alias rsync='rsync'
 
 # vim
 alias vi="nvim"
@@ -37,7 +39,7 @@ alias yt-dlp="yt-dlp -S res,ext:mp4:m4a --recode mp4"
 alias better_find="find . -print | grep -i $1"
 
 alias lock="xflock4"
-alias watch="watch -c"
+alias watch="watch -c -n 0.2"
 alias ncdu="ncdu --color off"
 alias mpv_small="mpv --geometry=1400x720+1200-1200 --volume=10 $1"
 alias mpv_tiny="mpv --geometry=300x200+1200-1200 --volume=10 $1"
@@ -71,3 +73,15 @@ find_newest_files(){
   # $2 number of files to find
   find $1 -type f -printf "%T@ %p\n" | sort -n | cut -d' ' -f 2- | tail -n $2 | tac
 }
+gsuperfastcommit() {
+  message="$1"
+  git add . && git commit -m "$message" && git push
+}
+gsuperfastcommitplusplus() {
+  message="$1"
+  git add . && git commit -m "chore: update" && git push
+}
+brewupdateall() {
+  brew update && brew upgrade && brew upgrade --cask --greedy && brew cleanup
+  echo "done"
+} 
