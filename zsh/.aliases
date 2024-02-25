@@ -1,37 +1,28 @@
-#!/bin/bash
-# .aliases: make calling commands/scripts easier
+
+
 alias sudo='sudo '
 alias ssh='ssh'
 alias rsync='rsync'
 
-# vim
 alias vi="nvim"
 alias vim="nvim"
 alias v="nvim"
 
-# python
 alias py3="python3"
 alias py2="python"
 alias python="python3"
 
-# git
 alias g="git"
-# alias gitlogline="git log --pretty=oneline" # log commits one line each
-# alias gitlogline="git log --pretty=format:"%h%x09%an%x09%ad%x09%s"" # log commits one line each
 alias gitlogline="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
 alias fetchpull="git fetch && git pull"
 
-# Folders/files
 alias dt="cd ~/Desktop"
 
-# resource zshrc
 alias reload="source ~/.zshrc"
 
-# misspell
 alias claer="clear"
 alias mkidr="mkdir"
 
-# commands
 alias ls="ls -l --color"
 alias ptest="ping -v 8.8.8.8"
 alias geoip="curl --silent ipinfo.io | jq"
@@ -41,21 +32,16 @@ alias better_find="find . -print | grep -i $1"
 alias lock="xflock4"
 alias watch="watch -c -n 0.2"
 alias ncdu="ncdu --color off"
-alias mpv_small="mpv --geometry=1400x720+1200-1200 --volume=10 $1"
-alias mpv_tiny="mpv --geometry=300x200+1200-1200 --volume=10 $1"
 alias news="newsboat"
 
-# tmux
 alias tmk="tmux kill-session -t"
 alias tma="tmux attach-session -t"
 alias tml="tmux ls"
 
-
-# docker
 clean_docker(){
-  docker rm -vf $(docker ps -aq) # delete all containers
-  docker rmi -f $(docker images -aq) # delete all images
-  docker system prune --volumes --all -f # delete all volumes
+  docker rm -vf $(docker ps -aq) 
+  docker rmi -f $(docker images -aq) 
+  docker system prune --volumes --all -f 
 }
 power_docker_image(){
 	clean_docker; docker build -t $1 .; docker run -d --name $1 $1; 
@@ -67,12 +53,6 @@ power_lazy_docker(){
   clean_docker; docker-compose up -d; lazydocker;
 }
 
-#find
-find_newest_files(){
-  # $1 directory
-  # $2 number of files to find
-  find $1 -type f -printf "%T@ %p\n" | sort -n | cut -d' ' -f 2- | tail -n $2 | tac
-}
 gsuperfastcommit() {
   message="$1"
   git add . && git commit -m "$message" && git push
@@ -81,7 +61,8 @@ gsuperfastcommitplusplus() {
   message="$1"
   git add . && git commit -m "chore: update" && git push
 }
+
 brewupdateall() {
-  brew update && brew upgrade && brew upgrade --cask --greedy && brew cleanup
+  brew update; brew upgrade; brew upgrade --cask --greedy; brew cleanup
   echo "done"
 } 
