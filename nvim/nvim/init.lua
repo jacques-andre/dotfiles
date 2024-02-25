@@ -1,36 +1,38 @@
-require('plugins') -- require packer plugins
-require('lsp')
-require('treesitter')
+require('plugins')
+-- Enable syntax highlighting
+vim.cmd 'syntax on'
 
-vim.wo.number = true -- set line numbers
-vim.g.mapleader = " " -- leader space key
-vim.cmd [[colorscheme moonfly]] -- color scheme
+-- Defaults
+vim.wo.number = true -- Enable line numbers
+vim.o.incsearch = true -- Incremental search
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.smartindent = true
+-- Indentation settings
+vim.o.softtabstop = 2
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.autoindent = true
+vim.o.expandtab = true -- Convert tabs to spaces
 
-vim.opt.incsearch = true
-vim.opt.hlsearch = false
-vim.opt.cursorline = true
+-- Search settings
+vim.o.hlsearch = false -- Disable highlighting search results
+vim.o.ignorecase = true -- Case-insensitive searching...
+vim.o.smartcase = true -- ...unless search includes uppercase letters
+vim.o.scrolloff = 8
+vim.wo.signcolumn = 'yes'
+vim.wo.conceallevel = 0
+vim.o.clipboard = 'unnamedplus'
+
+-- Leader key
+vim.g.mapleader = ' '
+
+-- Mappings for moving around splits using space + hjkl
+vim.api.nvim_set_keymap('n', '<leader>h', ':wincmd h<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>j', ':wincmd j<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>k', ':wincmd k<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>l', ':wincmd l<CR>', {noremap = true})
+
+-- Mapping for system clipboard
+vim.api.nvim_set_keymap('v', 'xyy', '"+y', {noremap = true})
 
 vim.opt.termguicolors = true
-
--- fuzzy finding keymap
-local builtin = require('telescope.builtin')
-local api = require "nvim-tree.api"
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {}) -- leader+ff find files
-vim.keymap.set('n', '<leader>gf', builtin.git_files, {}) -- leader+gf find git files
-vim.keymap.set('v', 'xyy', '"+y<CR>', { silent = true })
-vim.keymap.set('n', '<leader>t', api.tree.toggle, {})
-
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
--- auto enable spell
-vim.cmd [[autocmd FileType markdown setlocal spell]]
-vim.cmd [[autocmd FileType gitcommit setlocal spell]]
-
-require("nvim-tree").setup()
+vim.cmd.colorscheme('codedark')
