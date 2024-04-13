@@ -1,5 +1,5 @@
 [colors.primary]
-background = '#0D0E0E'
+background = '#010101'
 foreground = '#d8d8d8'
 
 [colors.cursor]
@@ -30,3 +30,4 @@ size = 15.0
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
+# family = "BitstromWera Nerd Font"
