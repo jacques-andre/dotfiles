@@ -1,5 +1,4 @@
-
-
+#!/bin/bash
 alias sudo='sudo '
 alias ssh='ssh'
 alias rsync='rsync'
@@ -43,6 +42,10 @@ clean_docker(){
   docker rmi -f $(docker images -aq) 
   docker system prune --volumes --all -f 
 }
+soft_clean_docker(){
+  docker-compose down;
+  docker-compose up -d --build;
+}
 power_docker_image(){
 	clean_docker; docker build -t $1 .; docker run -d --name $1 $1; 
 }
@@ -52,7 +55,6 @@ power_docker(){
 power_lazy_docker(){
   clean_docker; docker-compose up -d; lazydocker;
 }
-
 gsuperfastcommit() {
   message="$1"
   git add . && git commit -m "$message" && git push
@@ -61,8 +63,35 @@ gsuperfastcommitplusplus() {
   message="$1"
   git add . && git commit -m "chore: update" && git push
 }
-
 brewupdateall() {
-  brew update; brew upgrade; brew upgrade --cask --greedy; brew cleanup
-  echo "done"
+  brew update;
+  brew upgrade;
+  brew upgrade --cask --greedy;
+  brew cleanup;
+  echo "done";
 } 
+update_vim_color() {
+    local color=$1
+    local color_var="export VIM_COLOR=${color}"
+
+    if grep -q 'export VIM_COLOR=' "$HOME/.zshenv"; then
+        sed -i '' "s|export VIM_COLOR=.*|$color_var|" "$HOME/.zshenv"
+    else
+        echo "$color_var" >> "$HOME/.zshenv"
+    fi
+    source "$HOME/.zshenv"
+}
+dark() {
+        osascript -l JavaScript -e "Application('System Events').appearancePreferences.darkMode = true" > /dev/null
+        update_vim_color "dark_theme"
+        ln -fs ~/.config/alacritty/themes/dark-theme.toml ~/.config/alacritty/themes/_active.toml
+        touch ~/.config/alacritty/alacritty.toml
+        tmux source-file $HOME/.config/tmux/dark-theme.conf
+}
+light() {
+        osascript -l JavaScript -e "Application('System Events').appearancePreferences.darkMode = false" > /dev/null
+        update_vim_color "light_theme"
+        ln -fs ~/.config/alacritty/themes/light-theme.toml ~/.config/alacritty/themes/_active.toml
+        touch ~/.config/alacritty/alacritty.toml
+        tmux source-file $HOME/.config/tmux/light-theme.conf
+}
