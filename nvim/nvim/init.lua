@@ -1,3 +1,5 @@
+local create_aucmd = vim.api.nvim_create_autocmd
+
 require('plugins')
 -- Enable syntax highlighting
 vim.cmd 'syntax on'
@@ -34,5 +36,24 @@ vim.api.nvim_set_keymap('n', '<leader>l', ':wincmd l<CR>', {noremap = true})
 -- Mapping for system clipboard
 vim.api.nvim_set_keymap('v', 'xyy', '"+y', {noremap = true})
 
+-- colors
 vim.opt.termguicolors = true
-vim.cmd.colorscheme('codedark')
+local vim_color = os.getenv("VIM_COLOR")
+
+local function set_colorscheme(theme)
+  if theme == "dark_theme" then
+      vim.o.background = 'dark'
+      vim.cmd("colorscheme vscode")
+  else
+      vim.o.background = 'light'
+      vim.cmd("colorscheme vscode")
+  end
+end
+
+set_colorscheme(vim_color)
+
+-- auto spell
+create_aucmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"COMMIT_EDITMSG", "MERGE_MSG", "*.txt", "*.md", "{}"},
+  command = "setlocal spell spelllang=en_us",
+})
